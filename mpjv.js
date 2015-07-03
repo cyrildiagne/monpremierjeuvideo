@@ -8,8 +8,8 @@ function setup(app_) {
   stage = new PIXI.Container();
 
   document.body.appendChild(renderer.view);
-  document.body.addEventListener('keydown', keydown);
-  document.body.addEventListener('keyup', keyup);
+  document.body.addEventListener('mousedown', mousedown);
+  document.body.addEventListener('mouseup', mouseup);
   window.addEventListener('resize', resize);
 
   resize();
@@ -21,20 +21,14 @@ function setup(app_) {
   animate();
 }
 
-function keydown(ev) {
-  if (ev.keyCode > 30 && ev.keyCode < 50) {
-    ev.preventDefault();
-  }
-  if (app.auto_boucle) {
+function mousedown(ev) {
+  if (app.auto_bouton_on) {
     app.auto_bouton_on();
   }
 }
 
-function keyup(ev) {
-  if (ev.keyCode > 30 && ev.keyCode < 50) {
-    ev.preventDefault();
-  }
-  if (app.auto_boucle) {
+function mouseup(ev) {
+  if (app.auto_bouton_off) {
     app.auto_bouton_off();
   }
 }
