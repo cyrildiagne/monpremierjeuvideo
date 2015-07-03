@@ -1,30 +1,42 @@
-var renderer, stage;
+var app, renderer, stage;
 
-function setup() {
+function setup(app_) {
+
+  app = app_;
+
   renderer = PIXI.autoDetectRenderer(800, 600);
-  document.body.appendChild(renderer.view);
   stage = new PIXI.Container();
-  resize();
 
+  document.body.appendChild(renderer.view);
   document.body.addEventListener('keydown', keydown);
   document.body.addEventListener('keyup', keyup);
   window.addEventListener('resize', resize);
 
-  auto_initialisation();
+  resize();
+
+  if (app.auto_boucle) {
+    app.auto_initialisation();
+  }
+
+  animate();
 }
 
 function keydown(ev) {
   if (ev.keyCode > 30 && ev.keyCode < 50) {
     ev.preventDefault();
   }
-  auto_bouton_on();
+  if (app.auto_boucle) {
+    app.auto_bouton_on();
+  }
 }
 
 function keyup(ev) {
   if (ev.keyCode > 30 && ev.keyCode < 50) {
     ev.preventDefault();
   }
-  auto_bouton_off();
+  if (app.auto_boucle) {
+    app.auto_bouton_off();
+  }
 }
 
 function resize() {
@@ -35,7 +47,10 @@ function resize() {
 
 function animate() {
 	requestAnimationFrame(animate);
-  auto_boucle();
+
+  if (app.auto_boucle) {
+    app.auto_boucle();
+  }
   render();
 }
 
@@ -43,7 +58,7 @@ function render() {
 	renderer.render(stage);
 }
 
-// STARTUP
+// UTILS
 
 function half_chance() {
   return Math.random() < 0.5;
@@ -68,8 +83,3 @@ function create_tile(adresse) {
   stage.addChild(tilingSprite);
   return tilingSprite;
 }
-
-// STARTUP
-
-setup();
-animate();
