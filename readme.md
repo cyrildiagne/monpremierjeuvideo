@@ -49,11 +49,13 @@
 - variable
 - if () {} else {}
   * <, >, == et !=
-- custom function (parentheses, accolades)
+- function custom (parentheses, accolades)
 - notion d'objet (new, '.', eg: position)
 - coordonnées (x/y)
-- for (var x of y) loop
+
+Extras :
 - array
+- for (var x of y) loop
 
 ----
 
