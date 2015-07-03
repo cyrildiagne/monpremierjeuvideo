@@ -1,9 +1,8 @@
+# Scéance 1 - (3h) :
 
-====== Day 1 ====== (3h) :
+### 1) Présentation - 15 min
 
-1) Présentation ----------------------- 15 min
-
-2) Discussion sur le jeu vidéo -------- 30 min
+### 2) Discussions autour du jeu vidéo - 30 min
 
 - De quoi est composé un jeu vidéo ?
 
@@ -28,7 +27,7 @@
       le personnage se déplace, que le son se joue..etc.
 
 
-3) C'est quoi le code ? --------------- 15 min
+### 3) C'est quoi le code ? - 15 min
 
   * à quoi ça ressemble ?
 
@@ -43,7 +42,7 @@
     - compter
 
 
-4) Introduction à Javascript / HTML / CSS -------------- 2h
+### 4) Introduction à Javascript / HTML / CSS -------------- 2h
 
 - function (utilisation)
 - commentaire
@@ -56,20 +55,21 @@
 - for (var x of y) loop
 - array
 
+----
 
-====== Day 2 ====== (3h) :
+# Scéance 2 - (3h) :
 
-> Obstacles
-> Score
-> Graphisme (Gimp ?)
+- Obstacles
+- Score
+- Graphisme (http://pixlr.com/editor/, http://pixelartmaker.com/)
     - personnage
     - obstacles
     - background
-    - sol
 
+----
 
-====== Day 3 ====== (3h):
+# Scéance 3 - (3h):
 
-> Score
-> Son
-> Personnalisation
+- Score
+- Son
+- Personnalisation
