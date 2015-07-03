@@ -77,9 +77,12 @@ function create_sprite(adresse) {
   return sprite;
 }
 
-function create_tile(adresse) {
+function create_background(adresse) {
   var texture = PIXI.Texture.fromImage(adresse);
   var tilingSprite = new PIXI.extras.TilingSprite(texture, renderer.width, renderer.height);
+  texture.addListener('update',function(){
+    tilingSprite.tileScale.x = tilingSprite.tileScale.y = renderer.height / texture.height;
+  })
   stage.addChild(tilingSprite);
   return tilingSprite;
 }
