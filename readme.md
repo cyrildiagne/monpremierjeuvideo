@@ -14,6 +14,7 @@ Les enfants ont 3 séances de 3h réparties sur 3 jours pour faire leur jeu.
   De quoi est composé un jeu vidéo ?
 
   * Gameplay
+
       a) Mécanisme/type de jeu (plateforme, shooter, sandbox, simulation..etc)
       b) Interaction homme-machine (manette, clavier, kinect..etc)
       c) Réflexion sur le design d'interaction :
@@ -65,10 +66,10 @@ Les enfants ont 3 séances de 3h réparties sur 3 jours pour faire leur jeu.
       - //  pour les commentaire
 
     * function : utilisation
-      - les functions sont des actions que l'on fait executer fait_un_café()
+      - les functions sont des actions que l'on fait executer fait_un_gateau()
       - les parenthèses indique que l'on veut lancer l'action (comme si on appuyait sur le bouton d'une machine)
-      - les functions sont souvent imbriquées : pour faire un café, la machine chauffe l'eau..etc
-      - les arguments permettent de personnaliser l'execution d'une action. Par exemple on choisit le type de café que l'on met dans la machine
+      - les functions sont souvent imbriquées : pour faire un gateau, la machine rassemble les ingrédients..etc
+      - les arguments permettent de personnaliser l'execution d'une action. Par exemple on choisit le type de fruits que l'on veut dans le gateau..etc
 
 
   • game_1 : __fait avancer automatiquement le fond d'écran__

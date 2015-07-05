@@ -6,11 +6,11 @@
 Si vous ajoutez ces fonctions au code de votre jeu avec le nom exact, elles seront appelées automatiquement.
 
 
-*auto_creation*
+__auto_creation__
 
 Cette fonction est appelée automatiquement lorsque l'application démarre
 
-__Exemple :__
+*Exemple :*
 ```
 function auto_creation() {
 
@@ -18,11 +18,11 @@ function auto_creation() {
 ```
 
 
-*auto_boucle*
+__auto_boucle__
 
 Cette fonction est appelée automatiquement à chaque fois que l'image est redessinée (60 fois par secondes)
 
-__Exemple :__
+*Exemple :*
 ```
 function auto_boucle() {
 
@@ -30,11 +30,11 @@ function auto_boucle() {
 ```
 
 
-*auto_bouton_on*
+__auto_bouton_on__
 
 Cette fonction est appelée automatiquement lorsque le bouton de jeu est appuyé
 
-__Exemple :__
+*Exemple :*
 ```
 function auto_bouton_on() {
 
@@ -42,11 +42,11 @@ function auto_bouton_on() {
 ```
 
 
-*auto_bouton_off*
+__auto_bouton_off__
 
 Cette fonction est appelée automatiquement lorsque le bouton de jeu est relaché
 
-__Exemple :__
+*Exemple :*
 ```
 function auto_bouton_off() {
 
@@ -62,7 +62,7 @@ function auto_bouton_off() {
 Vous pouvez appeler ces fonctions pour enrichir votre jeu.
 
 
-*ajoute_fond*
+__ajoute_fond__
 
 Cette fonction ajoute une image en fond d'écran. Le fond est automatiquement dupliqué pour remplir tout l'écran.
 Il ne peut y avoir qu'un fond à la fois.
@@ -73,26 +73,26 @@ Il ne peut y avoir qu'un fond à la fois.
 > Renvoi :
 - une variable d'image
 
-__Exemple :__
+*Exemple :*
 ```
 var monFond = ajoute_fond("http://imgur.com/jXQfmZX.jpg");
 ```
 
 
-*avance_fond*
+__avance_fond__
 
 Cette fonction permet de faire avancer le fond
 
 > Arguments :
 - 1) nombre de pixel de déplacement du fond
 
-__Exemple :__
+*Exemple :*
 ```
 avance_fond(5);
 ```
 
 
-*ajoute_image*
+__ajoute_image__
 
 Cette fonction ajoute une image au jeu
 
@@ -102,13 +102,13 @@ Cette fonction ajoute une image au jeu
 > Renvoi :
 - une variable d'image
 
-__Exemple :__
+*Exemple :*
 ```
 var monImage = ajoute_image("http://imgur.com/jXQfmZX.jpg");
 ```
 
 
-*ajoute_obstacle*
+__ajoute_obstacle__
 
 Cette fonction permet d'ajouter un obstacle.
 
@@ -118,26 +118,26 @@ Cette fonction permet d'ajouter un obstacle.
 > Renvoi :
 - une variable d'image
 
-__Exemple :__
+*Exemple :*
 ```
 var monObstacle = ajoute_obstacle("http://imgur.com/jXQfmZX.jpg");
 ```
 
 
-*avance_tous_les_obstacles*
+__avance_tous_les_obstacles__
 
 Cette fonction fait avancer tous les obstacles.
 
 > Arguments :
 - 1) nombre de pixel de déplacement des obstacles
 
-__Exemple :__
+*Exemple :*
 ```
 avance_tous_les_obstacles(5);
 ```
 
 
-*une_chance_sur*
+__une_chance_sur__
 
 Cette fonction permet par exemple de n'effectuer une action que quelque fois.
 
@@ -147,7 +147,7 @@ Cette fonction permet par exemple de n'effectuer une action que quelque fois.
 > Renvoi :
 - Un booléen (Vrai ou Faux) selon un tirage aléatoire
 
-__Exemple :__
+*Exemple :*
 ```
 var chanceAleatoire = une_chance_sur(6);
 if (changeAleatoire) {
@@ -156,7 +156,7 @@ if (changeAleatoire) {
 ```
 
 
-*nombre_aleatoire_jusqua*
+__nombre_aleatoire_jusqua__
 
 Cette fonction permet d'obtenir un nombre aléatoire entre 0 et un maximum
 
@@ -166,73 +166,73 @@ Cette fonction permet d'obtenir un nombre aléatoire entre 0 et un maximum
 > Renvoi :
 - Un nombre aléatoire entre 0 et le maximum donné en argument
 
-__Exemple :__
+*Exemple :*
 ```
 var monNombreAleatoire = nombre_aleatoire_jusqua(10);
 ```
 
 
-*largeur_ecran*
+__largeur_ecran__
 
 Cette fonction renvoie la largeur de l'écran
 
 > Renvoi :
 - Un nombre correspondant à la largeur de l'écran en pixels
 
-__Exemple :__
+*Exemple :*
 ```
 var largeur = largeur_ecran();
 ```
 
 
-*hauteur_ecran*
+__hauteur_ecran__
 
 Cette fonction renvoie la hauteur de l'écran
 
 > Renvoi :
 - Un nombre correspondant à la hauteur de l'écran en pixels
 
-__Exemple :__
+*Exemple :*
 ```
 var hauteur = hauteur_ecran();
 ```
 
-*affiche_score*
+__affiche_score__
 
 Cette fonction affiche le score
 
 > Arguments :
 - 1) nombre du score actuel
 
-__Exemple :__
+*Exemple :*
 ```
 var score_actuel = 4000;
 affiche_score(score_actuel);
 ```
 
 
-*affiche_score_grand*
+__affiche_score_grand__
 
 Cette fonction affiche le score en grand au milieu de l'écran
 
 > Arguments :
 - 1) nombre du score actuel
 
-__Exemple :__
+*Exemple :*
 ```
 var score_actuel = 4000;
 affiche_score(score_actuel);
 ```
 
 
-*cherche_collision_entre_les_obstacles_et*
+__cherche_collision_entre_les_obstacles_et__
 
 Cette fonction regarde si l'image donnée en argument touche n'importe lequelle des obstacles
 
 > Argument :
 - 1) une image
 
-__Exemple :__
+*Exemple :*
 ```
 var monJoueur = ajoute_image("http://imgur.com/jXQfmZX.jpg");
 avance_tous_les_obstacles(10);
@@ -242,47 +242,47 @@ if (collision) {
 }
 ```
 
-*joue_son*
+__joue_son__
 
 Cette fonction joue un son
 
 > Arguments :
 - 1) adresse d'un son (mp3 ou wav)
 
-__Exemple :__
+*Exemple :*
 ```
 joue_son("http://freesoundeffect.com/ghZ3o9");
 ```
 
 
-*enleve_tous_les_osbtacles*
+__enleve_tous_les_osbtacles__
 
 Cette fonction permet d'enlever tous les obstacles.
 
-__Exemple :__
+*Exemple :*
 ```
 enleve_tous_les_osbtacles();
 ```
 
 
-*enleve_image*
+__enleve_image__
 
 Cette fonction permet d'enlever une image ajoutée avec 'ajoute_image'
 
 > Arguments :
 - 1) une variable d'image
 
-__Exemple :__
+*Exemple :*
 ```
 var monImage = ajoute_image("http://imgur.com/jXQfmZX.jpg");
 enleve_image(monImage);
 ```
 
-*stop*
+__stop__
 
 Cette fonction arrête l'execution du jeu
 
-__Exemple :__
+*Exemple :*
 ```
 stop();
 ```
@@ -296,28 +296,28 @@ Ces fonctions ont des noms anglais.
 Elles permettent d'ajouter des fonctionnalités avancées à votre jeu.
 
 
-*loop_screen*
+__loop_screen__
 
 Cette fonction permet d'empécher une image de sortir de l'écran en la faisant revenir de l'autre coté.
 
 > Argument :
 - 1) une image
 
-__Exemple :__
+*Exemple :*
 ```
 var monImage = ajoute_image("http://imgur.com/jXQfmZX.jpg");
 loop_screen(monImage);
 ```
 
 
-*get_screen_center*
+__get_screen_center__
 
 Cette fonction renvoie les coordonnées du milieu de l'écran
 
 > Renvoi :
 - une variable de type Point représentant les coordonnées du milieu de l'écran
 
-__Exemple :__
+*Exemple :*
 ```
 var milieu = get_screen_center();
 monJoueur.position.x = milieu.x;
