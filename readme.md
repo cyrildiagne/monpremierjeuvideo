@@ -1,7 +1,13 @@
 # Mon Premier Jeu Vidéo
 
-Workshop avec des enfants de 9 à 14 ans dans lequel ils réalisent leur premier jeu vidéo avec javascript et Codepen.io
+Workshop avec des enfants de 9 à 15 ans dans lequel ils réalisent leur premier jeu vidéo avec javascript et Codepen.io
 Les enfants ont 3 séances de 3h réparties sur 3 jours pour faire leur jeu.
+
+La template vide :
+- http://codepen.io/kikko_fr/pen/BNrjqx?editors=001
+
+La Collection Codepen des différentes étapes :
+http://codepen.io/collection/AExwWP/
 
 ---
 
@@ -71,6 +77,8 @@ Les enfants ont 3 séances de 3h réparties sur 3 jours pour faire leur jeu.
       - les functions sont souvent imbriquées : pour faire un gateau, la machine rassemble les ingrédients..etc
       - les arguments permettent de personnaliser l'execution d'une action. Par exemple on choisit le type de fruits que l'on veut dans le gateau..etc
 
+    * Résultat : http://codepen.io/kikko_fr/pen/wamMym?editors=001
+
 
   • game_1 : __fait avancer automatiquement le fond d'écran__
 
@@ -86,6 +94,8 @@ Les enfants ont 3 séances de 3h réparties sur 3 jours pour faire leur jeu.
       - on peut y stocker un nombre, un mot, une image ou n'importe quel autre élément du jeu
 
     * notion de raffraichissement d'image
+
+    * Résultat : http://codepen.io/kikko_fr/pen/MwVKGx?editors=001
 
 
 ---
@@ -107,6 +117,8 @@ Les enfants ont 3 séances de 3h réparties sur 3 jours pour faire leur jeu.
       - 'x'
       - 'poid'
 
+    * Résultat : http://codepen.io/kikko_fr/pen/eNMJrw?editors=001
+
   • game_3 : __ajout des controles du personnage__
 
     * documentation : auto_bouton_on & auto_bouton_off
@@ -114,6 +126,8 @@ Les enfants ont 3 séances de 3h réparties sur 3 jours pour faire leur jeu.
     * booléens
 
     * if () {}
+
+    * Résultat : http://codepen.io/kikko_fr/pen/vORLrm?editors=001
 
   • game_4 : __ajout des obstacles__
 
@@ -125,6 +139,8 @@ Les enfants ont 3 séances de 3h réparties sur 3 jours pour faire leur jeu.
       - nombre_aleatoire_jusqua
       - avance_tous_les_obstacles
 
+    * Résultat : http://codepen.io/kikko_fr/pen/vORLrm?editors=001
+
   • game_5 : __ajout des collisions avec les obstacles__
 
     * documentation :
@@ -132,16 +148,21 @@ Les enfants ont 3 séances de 3h réparties sur 3 jours pour faire leur jeu.
       - enleve_image();
       - stop();
 
+    * Résultat : http://codepen.io/kikko_fr/pen/Wvzryg?editors=001
+
 ---
 
 ## Scéance 3 - (3h)
 
   • game_6 : __ajout du graphisme__
 
-    - http://pixlr.com/editor/ ou http://pixelartmaker.com/
-    - personnage
-    - obstacles
-    - background
+    * drawing tools :
+      - http://pixelartmaker.com ou http://pixlr.com/editor
+      - personnage
+      - obstacles
+      - background
+
+    * Résultat : http://codepen.io/kikko_fr/pen/eNMJKw?editors=001
 
   • game_7 : __ajout du score et du son__
 
@@ -149,6 +170,8 @@ Les enfants ont 3 séances de 3h réparties sur 3 jours pour faire leur jeu.
       - affiche_score
       - affiche_score_grand
       - joue_son
+
+    * Résultat : http://codepen.io/kikko_fr/pen/GJxoXM?editors=001
 
 ---
 
@@ -163,15 +186,8 @@ Les enfants ont 3 séances de 3h réparties sur 3 jours pour faire leur jeu.
 #  TODO :
 
 * P1 :
-  - enregistrement > voir système de comptes
-  - trouver visuels pour les notions de cours
-  - mettre les différentes game-steps sur codepen
-  - voir système de fork
-  - créer une galerie codepen ?
 
 * P2 :
-  - faire apparaitre les erreurs js
-  - move mpjv.js to a codepen
 
 * P3 :
   - add sounds
