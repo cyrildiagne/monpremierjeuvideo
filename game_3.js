@@ -5,7 +5,7 @@ var vitesse_defilement = 3;
 var player;
 
 // variable indiquant si le bouton de controlle est appuyé
-var bouton_on = false;
+var jump = false;
 
 // Fonction automatique : auto_creation
 // Cette fonction est appelée automatiquement lorsque l'application démarre
@@ -21,7 +21,7 @@ function auto_creation() {
   player.x = 100;
 
   // définit le poid de cette image pour qu'elle tombe automatiquement
-  player.poid = 25;
+  player.poids = 25;
 }
 
 // Fonction automatique : auto_boucle
@@ -32,7 +32,7 @@ function auto_boucle() {
   avance_fond(vitesse_defilement);
 
   // si le bouton est appuyé, on propulse le joueur vers le haut
-  if (bouton_on) {
+  if (jump) {
     propulse(player, 75);
   }
 }
@@ -42,8 +42,8 @@ function auto_boucle() {
 // lorsque le bouton de jeu est appuyé
 function auto_bouton_on() {
 
-  // on passe la variable "bouton_on" à "true" (vrai)
-  bouton_on = true;
+  // on passe la variable "jump" à "true" (vrai)
+  jump = true;
 }
 
 
@@ -52,9 +52,9 @@ function auto_bouton_on() {
 // lorsque le bouton de jeu est relaché
 function auto_bouton_off() {
 
-  // on passe la variable "bouton_on" à "false" (faux)
-  bouton_on = false;
+  // on passe la variable "jump" à "false" (faux)
+  jump = false;
 }
 
 // lance l'application
-setup(this);
+start(this);

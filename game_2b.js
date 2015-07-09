@@ -1,9 +1,8 @@
-// variable qui stocke la vitesse à laquelle le niveau défile
-var vitesse_defilement = 3;
-
 // variable pour stocker le joueur
 var player;
 
+// variable qui stocke la vitesse du joueur
+var vitesse = 3;
 
 // Fonction automatique : auto_creation
 // Cette fonction est appelée automatiquement lorsque l'application démarre
@@ -16,7 +15,7 @@ function auto_creation() {
   player = ajoute_image();
 
   // on position le joueur à gauche de l'écran, à 100 pixels du bord
-  player.x = 100;
+  player.x = 0;
 }
 
 // Fonction automatique : auto_boucle
@@ -24,7 +23,16 @@ function auto_creation() {
 function auto_boucle() {
 
   // on avance horizontalement à la vitesse en cours
-  avance_fond(vitesse_defilement);
+  avance_fond(3);
+
+  player.x = player.x + vitesse;
+
+  if (player.x > 1100) {
+    vitesse = -vitesse;
+  }
+  if (player.x < 0) {
+    vitesse = -vitesse;
+  }
 }
 
 // lance l'application

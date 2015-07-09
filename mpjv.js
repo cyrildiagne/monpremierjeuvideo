@@ -4,7 +4,7 @@ var obstacles = [];
 
 function ajoute_image(adresse_img) {
   if (!adresse_img) {
-    adresse_img = "assets/default/player.png";
+    adresse_img = "http://i.imgur.com/9Pi4NYG.png";
   }
   var texture = PIXI.Texture.fromImage(adresse_img);
   var sprite = new PIXI.Sprite(texture);
@@ -18,7 +18,7 @@ function ajoute_image(adresse_img) {
 
 function ajoute_fond(adresse_img) {
   if (!adresse_img) {
-    adresse_img = "assets/default/background.png";
+    adresse_img = "http://i.imgur.com/LY2W2HM.png";
   }
   var texture = PIXI.Texture.fromImage(adresse_img);
   var sprite = new PIXI.extras.TilingSprite(texture, renderer.width, renderer.height);
@@ -38,8 +38,8 @@ function avance_fond(vitesse) {
 }
 
 function propulse(image, montant) {
-  if (typeof(image.poid) == "undefined") {
-    image.poid = 0;
+  if (typeof(image.poids) == "undefined") {
+    image.poids = 0;
     image.velocity = new PIXI.Point();
   }
   image.velocity.y -= montant * 0.01;
@@ -47,7 +47,7 @@ function propulse(image, montant) {
 
 function ajoute_obstacle(adresse_img) {
   if (!adresse_img) {
-    adresse_img = "assets/default/obstacle.png";
+    adresse_img = "http://i.imgur.com/y9aj7RQ.png";
   }
   var texture = PIXI.Texture.fromImage(adresse_img);
   var sprite = new PIXI.Sprite(texture);
@@ -71,6 +71,36 @@ function enleve_tous_les_osbtacles() {
   obstacles = [];
 }
 
+function enleve_obstacle(obstacle) {
+  game.removeChild(obstacle);
+  obstacles.splice(obstacles.indexOf(obstacle), 1);
+}
+
+var extraLabel;
+function affiche_extra(extra, taille, color) {
+  if(!color) {
+    color = "#ff0000";
+  }
+  if(!taille) {
+    taille = 72;
+  }
+  if (!extraLabel) {
+    extraLabel = new PIXI.Text(extra, {
+      font: 'bold '+ taille +'px Arial',
+      fill: color,
+      stroke: '#FFFFFF',
+      align : 'right',
+      strokeThickness: 6
+    });
+    ui.addChild(extraLabel);
+    return extraLabel;
+  }
+
+  extraLabel.text = extra;
+  extraLabel.position.y = 20;
+  extraLabel.position.x = 20;
+}
+
 function enleve_image(sprite) {
   game.removeChild(sprite);
 }
@@ -91,20 +121,32 @@ function nombre_aleatoire_jusqua(max) {
   return Math.random() * max;
 }
 
-function affiche_score(score) {
+function affiche_score(score, color) {
   if (scoreLabel==null) {
     add_score();
   }
-  scoreLabel.text = Math.round(score * 0.1);
+  if(typeof score == "number") {
+    score = Math.round(score);
+  }
+  var style = scoreLabel.style;
+  style.fill = color || "#000055";
+  style.font = 'bold 72px Arial';
+  scoreLabel.style = style;
+  scoreLabel.text = score;
+  scoreLabel.position.y = 20;
   scoreLabel.position.x = (renderer.width-scoreLabel.width) * 0.5;
 }
 
-function affiche_score_grand(score) {
+function affiche_score_grand(score, color) {
   if (scoreLabel==null) {
     add_score();
   }
-  scoreLabel.text = Math.round(score * 0.1);
+  if(typeof score == "number") {
+    score = Math.round(score);
+  }
+  scoreLabel.text = score;
   var style = scoreLabel.style;
+  style.fill = color || "#000055";
   style.font = 'bold 144px Arial';
   scoreLabel.style = style;
   scoreLabel.position.x = (renderer.width-scoreLabel.width) * 0.5;
@@ -125,12 +167,11 @@ function cherche_collision_entre_les_obstacles_et(sprite) {
     var yOverlap =  (p.y > op.y && p.y < op.y + obst.height)
       || (p.y + sprite.height > op.y && p.y + sprite.height < op.y + obst.height);
     if (xOverlap && yOverlap) {
-      return true;
+      return obst;
     }
   }
-  return false;
+  return null;
 }
-
 
 function joue_son(adresse_son) {
   // TODO!
@@ -171,7 +212,7 @@ function update_physics() {
   var sprite;
   for (var i = 0; i < game.children.length; i++) {
     sprite = game.children[i];
-    var mass = sprite.poid || sprite.mass;
+    var mass = sprite.poids || sprite.mass;
     if (mass) {
       if (typeof(sprite.velocity)=="undefined") {
         sprite.velocity = new PIXI.Point();
@@ -204,8 +245,6 @@ var stopped;
 
 function setup(app_) {
 
-  app = app_;
-
   renderer = PIXI.autoDetectRenderer(800, 600);
   document.body.appendChild(renderer.view);
 
@@ -223,21 +262,17 @@ function setup(app_) {
 
   resize();
 
-  if (app.auto_creation) {
-    app.auto_creation();
-  }
-
   animate();
 }
 
 function mousedown(ev) {
-  if (app.auto_bouton_on) {
+  if (app && app.auto_bouton_on) {
     app.auto_bouton_on();
   }
 }
 
 function mouseup(ev) {
-  if (app.auto_bouton_off) {
+  if (app && app.auto_bouton_off) {
     app.auto_bouton_off();
   }
 }
@@ -266,7 +301,7 @@ function animate() {
   	requestAnimationFrame(animate);
   }
   update_physics();
-  if (app.auto_boucle) {
+  if (app && app.auto_boucle) {
     app.auto_boucle();
   }
   render();
@@ -276,6 +311,36 @@ function render() {
 	renderer.render(stage);
 }
 
-function stop() {
-  stopped = true;
+function start(app_) {
+
+  app = app_;
+
+  if (app && app.auto_creation) {
+    app.auto_creation();
+  }
 }
+
+function reset() {
+
+}
+
+function stop() {
+  if(stopped) { return; }
+  stopped = true;
+  setTimeout(function() {
+    var md = function() {
+      for (var i = 0; i < game.children.length; i++) {
+        var sprite = game.children[i];
+        sprite.velocity = {x:0,y:0};
+      }
+      stopped = false;
+      enleve_tous_les_osbtacles();
+      score = 0;
+      animate();
+      document.body.removeEventListener('mousedown', md);
+    }
+    document.body.addEventListener('mousedown', md);
+  },250);
+}
+
+setup();

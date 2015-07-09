@@ -20,4 +20,4 @@ function auto_boucle() {
 }
 
 // lance l'application
-setup(this);
+start(this);
